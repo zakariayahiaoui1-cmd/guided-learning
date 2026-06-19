@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Engleasy - Guided Learning</title>
+    <link rel="icon" type="image/x-icon" href="https://drive.google.com/file/d/1d43xnGa_gw6GM6XYKudzLHNgPGVgrL6H/view?usp=sharing">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap" rel="stylesheet">
+    
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-TC28X98JPN"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-TC28X98JPN');
+    </script>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1138414422695002');
+    fbq('track', 'PageView');
+    </script>
+
+    <script>
+    !function (w, d, t) {
+      w.TTAQ = w.TTAQ || [];
+      w.TTAQ.push(['init', 'C1234567890ABCDE']);
+      w.TTAQ.push(['pageview']);
+      var s = d.createElement(t);
+      s.async = true;
+      s.src = 'https://analytics.tiktok.com/i18n/pixel/sdk.js?sdkid=C1234567890ABCDE';
+      var x = d.getElementsByTagName(t)[0];
+      x.parentNode.insertBefore(s, x);
+    }(window, document, 'script');
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #2c3075;
+            --secondary-color: #4a4e9b;
+            --accent-color: #E52C34;
+            --bg-color: #ffffff;
+            --text-dark: #1a1a1a;
+            --text-light: #ffffff;
+            --gray-light: #f8f9fa;
+            --gray-border: #e9ecef;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Montserrat', sans-serif;
+            -webkit-tap-highlight-color: transparent;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            padding: 15px 20px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo img {
+            height: 40px;
+            display: block;
+        }
+
+        .lang-switch {
+            background-color: transparent;
+            border: 2px user-scalable=no solid var(--text-light);
+            color: var(--text-light);
+            padding: 6px 14px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .lang-switch:hover {
+            background-color: var(--text-light);
+            color: var(--primary-color);
+        }
+
+        main {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .step-container {
+            background: var(--bg-color);
+            border: 1px solid var(--gray-border);
+            border-radius: 12px;
+            margin-bottom: 25px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+        }
+
+        .step-header {
+            background-color: var(--gray-light);
+            padding: 18px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            border-bottom: 1px solid var(--gray-border);
+        }
+
+        .step-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .step-badge {
+            background-color: var(--primary-color);
+            color: var(--text-light);
+            padding: 4px 10px;
+            border-radius: 50px;
+            font-size: 12px;
+            font-weight: 700;
+        }
+
+        .step-content {
+            padding: 20px;
+            display: none;
+        }
+
+        .step-container.active .step-content {
+            display: block;
+        }
+
+        .step-container.locked {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+
+        .iframe-wrapper {
+            position: relative;
+            width: 100%;
+            height: 550px;
+            border-radius: 8px;
+            overflow: hidden;
+            background: var(--gray-light);
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .video-wrapper {
+            position: relative;
+            padding-bottom: 56.25%;
+            height: 0;
+            overflow: hidden;
+            border-radius: 8px;
+            background: #000;
+        }
+
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .btn-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 15px;
+            background-color: var(--accent-color);
+            color: var(--text-light);
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 700;
+            cursor: pointer;
+            margin-top: 20px;
+            text-decoration: none;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn-action:hover {
+            background-color: #c92229;
+        }
+
+        .payment-box {
+            background-color: var(--gray-light);
+            border: 1px dashed var(--secondary-color);
+            border-radius: 8px;
+            padding: 20px;
+            margin-top: 15px;
+        }
+
+        .payment-item {
+            margin-bottom: 15px;
+            font-size: 15px;
+        }
+
+        .payment-item:last-child {
+            margin-bottom: 0;
+        }
+
+        .alert-box {
+            background-color: #fff3cd;
+            border: 1px solid #ffeeba;
+            color: #856404;
+            padding: 15px;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            font-size: 14px;
+        }
+
+        footer {
+            margin-top: 50px;
+            padding: 30px 20px;
+            background-color: var(--gray-light);
+            border-top: 1px solid var(--gray-border);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        .footer-links {
+            margin-top: 15px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .footer-links a {
+            color: var(--primary-color);
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        .footer-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* Language-specific layout rules */
+        html[dir="ltr"] {
+            text-align: left;
+        }
+        html[dir="rtl"] {
+            text-align: right;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="https://drive.google.com/file/d/18PlQ7hDIfQLV7pl62CQJU8CmiFITsU5F/view?usp=sharing" alt="Engleasy Logo">
+            </div>
+            <button class="lang-switch" onclick="toggleLanguage()" id="langBtn">English</button>
+        </div>
+    </header>
+
+    <main>
+        <div class="step-container active" id="step1Container">
+            <div class="step-header">
+                <div class="step-title">
+                    <span class="step-badge" id="badge1">الخطوة 1</span>
+                    <span id="title1">اختبار تحديد المستوى</span>
+                </div>
+            </div>
+            <div class="step-content">
+                <div class="iframe-wrapper">
+                    <iframe src="https://forms.gle/PpEVciEssmxoPwHG6" allow="autoplay"></iframe>
+                </div>
+                <button class="btn-action" onclick="completeStep(1)" id="btn1">لقد أكملت الاختبار - الانتقال للخطوة التالية</button>
+            </div>
+        </div>
+
+        <div class="step-container locked" id="step2Container">
+            <div class="step-header">
+                <div class="step-title">
+                    <span class="step-badge" id="badge2">الخطوة 2</span>
+                    <span id="title2">تعلم الإنجليزية وحدك بصفر دينار</span>
+                </div>
+            </div>
+            <div class="step-content">
+                <div class="video-wrapper">
+                    <iframe src="https://fathom.video/share/WS39_8PvuEbB17zvbYZQy4aALxvpMz9r" allowfullscreen></iframe>
+                </div>
+                <button class="btn-action" onclick="completeStep(2)" id="btn2">الانتقال إلى التسجيل والدفع</button>
+            </div>
+        </div>
+
+        <div class="step-container locked" id="step3Container">
+            <div class="step-header">
+                <div class="step-title">
+                    <span class="step-badge" id="badge3">الخطوة 3</span>
+                    <span id="title3">التسجيل وتثبيت المقعد</span>
+                </div>
+            </div>
+            <div class="step-content">
+                <div class="alert-box" id="instructionsTitle">
+                    <strong>⚠️ خطوات التسجيل وتثبيت المقعد:</strong>
+                    <ol style="margin-right: 20px; margin-left: 20px; margin-top: 10px;" id="instructionsList">
+                        <li>قم بتسديد رسوم الاشتراك واحتفظ بصورة واضحة لوصل الدفع (Reçu).</li>
+                        <li>اقرأ وثيقة الشروط والأحكام الخاصة بالأكاديمية من هنا: <a href="https://docs.google.com/document/d/1fGatTKYSyab8HNOOsE_XLpFwrxLqSNWkzMVU5Ww1ReY/edit?usp=sharing" target="_blank" style="color: inherit; font-weight: bold;">وثيقة الشروط والأحكام</a></li>
+                        <li>املأ البيانات في الأسفل وارفق صورة الوصل.</li>
+                    </ol>
+                </div>
+
+                <div class="payment-box">
+                    <div class="payment-item" id="baridiMobText">
+                        📱 <strong>تطبيق بريدي موب:</strong> 00799999002294758791
+                    </div>
+                    <div class="payment-item" id="ccpText">
+                        🏦 <strong>مكتب البريد (CCP):</strong> حساب بريدي: 0022947587 | المفتاح: 91 | الاسم واللقب: ZAKARIA YAHIAOUI
+                    </div>
+                </div>
+
+                <a href="https://forms.gle/Kf8VsPkEi3NAMMui6" target="_blank" class="btn-action" id="btn3Form">افتح استمارة التسجيل النهائية</a>
+                <a href="https://wa.me/213541035996" target="_blank" class="btn-action" style="background-color: #25D366; margin-top: 10px;" id="btn3Whatsapp">التسجيل عبر الواتساب</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2026 Engleasy. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="https://docs.google.com/document/d/1fGatTKYSyab8HNOOsE_XLpFwrxLqSNWkzMVU5Ww1ReY/edit?usp=sharing" target="_blank" id="privacyLink">سياسة الخصوصية</a>
+            <a href="https://docs.google.com/document/d/1fGatTKYSyab8HNOOsE_XLpFwrxLqSNWkzMVU5Ww1ReY/edit?usp=sharing" target="_blank" id="termsLink">الشروط والأحكام</a>
+        </div>
+    </footer>
+
+    <script>
+        let currentLang = 'ar';
+
+        const translations = {
+            ar: {
+                langBtn: 'English',
+                badge1: 'الخطوة 1',
+                title1: 'اختبار تحديد المستوى',
+                btn1: 'لقد أكملت الاختبار - الانتقال للخطوة التالية',
+                badge2: 'الخطوة 2',
+                title2: 'تعلم الإنجليزية وحدك بصفر دينار',
+                btn2: 'الانتقال إلى التسجيل والدفع',
+                badge3: 'الخطوة 3',
+                title3: 'التسجيل وتثبيت المقعد',
+                instructionsTitle: '⚠️ خطوات التسجيل وتثبيت المقعد:',
+                instructions1: 'قم بتسديد رسوم الاشتراك واحتفظ بصورة واضحة لوصل الدفع (Reçu).',
+                instructions2: 'اقرأ وثيقة الشروط والأحكام الخاصة بالأكاديمية من هنا: ',
+                instructions3: 'املأ البيانات في الأسفل وارفق صورة الوصل.',
+                baridiMob: '📱 تطبيق بريدي موب: 00799999002294758791',
+                ccp: '🏦 مكتب البريد (CCP): حساب بريدي: 0022947587 | المفتاح: 91 | الاسم واللقب: ZAKARIA YAHIAOUI',
+                btn3Form: 'افتح استمارة التسجيل النهائية',
+                btn3Whatsapp: 'التسجيل عبر الواتساب',
+                privacy: 'سياسة الخصوصية',
+                terms: 'الشروط والأحكام',
+                termsDocName: 'وثيقة الشروط والأحكام'
+            },
+            en: {
+                langBtn: 'العربية',
+                badge1: 'Step 1',
+                title1: 'Placement Test',
+                btn1: 'I have completed the test - Move to Next Step',
+                badge2: 'Step 2',
+                title2: 'Learn English Solo with Zero Dinars',
+                btn2: 'Proceed to Registration & Payment',
+                badge3: 'Step 3',
+                title3: 'Registration & Seat Confirmation',
+                instructionsTitle: '⚠️ Registration & Seat Confirmation Steps:',
+                instructions1: 'Pay the subscription fees and keep a clear copy of the receipt (Reçu).',
+                instructions2: 'Read the Academy\'s Terms & Conditions document here: ',
+                instructions3: 'Fill out the details below and attach the receipt image.',
+                baridiMob: '📱 BaridiMob App: 00799999002294758791',
+                ccp: '🏦 Post Office (CCP): Account: 0022947587 | Clé: 91 | Name: ZAKARIA YAHIAOUI',
+                btn3Form: 'Open Final Registration Form',
+                btn3Whatsapp: 'Register via WhatsApp',
+                privacy: 'Privacy Policy',
+                terms: 'Terms & Conditions',
+                termsDocName: 'Terms & Conditions Document'
+            }
+        };
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'ar' ? 'en' : 'ar';
+            const html = document.documentElement;
+            
+            html.setAttribute('lang', currentLang);
+            html.setAttribute('dir', currentLang === 'ar' ? 'rtl' : 'ltr');
+            
+            document.getElementById('langBtn').innerText = translations[currentLang].langBtn;
+            
+            document.getElementById('badge1').innerText = translations[currentLang].badge1;
+            document.getElementById('title1').innerText = translations[currentLang].title1;
+            document.getElementById('btn1').innerText = translations[currentLang].btn1;
+            
+            document.getElementById('badge2').innerText = translations[currentLang].badge2;
+            document.getElementById('title2').innerText = translations[currentLang].title2;
+            document.getElementById('btn2').innerText = translations[currentLang].btn2;
+            
+            document.getElementById('badge3').innerText = translations[currentLang].badge3;
+            document.getElementById('title3').innerText = translations[currentLang].title3;
+            
+            document.getElementById('baridiMobText').innerHTML = `📱 <strong>${currentLang === 'ar' ? 'تطبيق بريدي موب' : 'BaridiMob App'}:</strong> 00799999002294758791`;
+            document.getElementById('ccpText').innerHTML = currentLang === 'ar' ? 
+                `🏦 <strong>مكتب البريد (CCP):</strong> حساب بريدي: 0022947587 | المفتاح: 91 | الاسم واللقب: ZAKARIA YAHIAOUI` :
+                `🏦 <strong>Post Office (CCP):</strong> Account: 0022947587 | Clé: 91 | Name: ZAKARIA YAHIAOUI`;
+            
+            document.getElementById('btn3Form').innerText = translations[currentLang].btn3Form;
+            document.getElementById('btn3Whatsapp').innerText = translations[currentLang].btn3Whatsapp;
+            
+            document.getElementById('privacyLink').innerText = translations[currentLang].privacy;
+            document.getElementById('termsLink').innerText = translations[currentLang].terms;
+
+            const listHTML = `
+                <li>${translations[currentLang].instructions1}</li>
+                <li>${translations[currentLang].instructions2}<a href="https://docs.google.com/document/d/1fGatTKYSyab8HNOOsE_XLpFwrxLqSNWkzMVU5Ww1ReY/edit?usp=sharing" target="_blank" style="color: inherit; font-weight: bold;">${translations[currentLang].termsDocName}</a></li>
+                <li>${translations[currentLang].instructions3}</li>
+            `;
+            document.getElementById('instructionsTitle').getElementsByTagName('strong')[0].innerText = translations[currentLang].instructionsTitle;
+            document.getElementById('instructionsList').innerHTML = listHTML;
+        }
+
+        function completeStep(stepNum) {
+            confetti({
+                particleCount: 100,
+                spread: 70,
+                origin: { y: 0.6 }
+            });
+
+            if (stepNum === 1) {
+                const step2 = document.getElementById('step2Container');
+                step2.classList.remove('locked');
+                step2.classList.add('active');
+                localStorage.setItem('engleasy_step1_complete', 'true');
+                step2.scrollIntoView({ behavior: 'smooth' });
+            } else if (stepNum === 2) {
+                const step3 = document.getElementById('step3Container');
+                step3.classList.remove('locked');
+                step3.classList.add('active');
+                localStorage.setItem('engleasy_step2_complete', 'true');
+                step3.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
+        window.addEventListener('DOMContentLoaded', () => {
+            if (localStorage.getItem('engleasy_step1_complete') === 'true') {
+                document.getElementById('step2Container').classList.remove('locked');
+                document.getElementById('step2Container').classList.add('active');
+            }
+            if (localStorage.getItem('engleasy_step2_complete') === 'true') {
+                document.getElementById('step3Container').classList.remove('locked');
+                document.getElementById('step3Container').classList.add('active');
+            }
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <title>Engleasy</title>
+    <script>
+      (() => {
+        const saved = localStorage.getItem('engleasy.language');
+        const language = saved || (navigator.language.toLowerCase().startsWith('ar') ? 'ar' : 'en');
+        location.replace(`/guided-learning/${language}/`);
+      })();
+    </script>
+  </head>
+  <body><noscript><a href="/guided-learning/en/">Continue to Engleasy</a></noscript></body>
+</html>

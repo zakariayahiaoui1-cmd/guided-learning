@@ -1,0 +1,415 @@
+# CONTRIBUTING.md
+
+# Contributing to Engleasy Guided Learning
+
+Welcome!
+
+Before writing a single line of code, please read the following documents in this order:
+
+1. `PROJECT.md`
+2. `DECISIONS.md`
+3. This file (`CONTRIBUTING.md`)
+
+These three files define the philosophy, architecture, and development workflow of the project.
+
+---
+
+# Mission
+
+Our mission is NOT to build a beautiful website.
+
+Our mission is to build the easiest possible experience for an Algerian learner to become an Engleasy student.
+
+Every contribution should reduce confusion, increase trust, and improve the learner's experience.
+
+---
+
+# Core Principles
+
+Before making any change, ask yourself:
+
+* Does this reduce cognitive load?
+* Does this make the next action clearer?
+* Does this help the learner?
+* Does this improve trust?
+* Does this support the business goal?
+
+If the answer is "no", do not implement the change.
+
+---
+
+# Read Before Coding
+
+Every development session must follow this order:
+
+1. Read `PROJECT.md`.
+2. Read `DECISIONS.md`.
+3. Understand the current codebase.
+4. Identify the objective.
+5. Propose a solution.
+6. Wait for approval (when applicable).
+7. Implement.
+8. Test.
+9. Commit.
+10. Deploy.
+
+Never skip these steps.
+
+---
+
+# Product Philosophy
+
+This is not:
+
+* A marketing website
+* A portfolio
+* A brochure
+* A SaaS dashboard
+
+This is:
+
+A guided educational experience.
+
+Visitors should feel guided rather than sold to.
+
+---
+
+# StoryBrand Rules
+
+Always remember:
+
+The learner is the hero.
+
+Engleasy is the guide.
+
+Never reverse these roles.
+
+Never make Engleasy the center of the story.
+
+---
+
+# UX Rules
+
+Always prefer:
+
+One decision.
+
+One action.
+
+One visible CTA.
+
+One active accordion.
+
+Never create unnecessary choices.
+
+Never overwhelm the visitor.
+
+---
+
+# Design Guidelines
+
+The interface should feel inspired by:
+
+* Apple
+* Linear
+* Notion
+* Stripe
+* Duolingo
+
+Characteristics:
+
+* Calm
+* Premium
+* Minimal
+* Friendly
+* Spacious
+* Fast
+
+Avoid:
+
+* Busy layouts
+* Popups
+* Flashy animations
+* Visual noise
+* Decorative elements without purpose
+
+Whitespace is intentional.
+
+---
+
+# Mobile First
+
+Assume every visitor is using a smartphone.
+
+Every feature must work perfectly on:
+
+* Android
+* iPhone
+
+Desktop should be treated as an enhancement, not the primary experience.
+
+---
+
+# Accessibility
+
+Every contribution must support:
+
+* Keyboard navigation
+* Screen readers
+* Reduced motion
+* High contrast
+* Semantic HTML
+* Touch targets of at least 48px
+
+Accessibility is not optional.
+
+---
+
+# Performance
+
+Prioritize speed over visual complexity.
+
+Requirements:
+
+* Lazy-load heavy assets.
+* Avoid unnecessary JavaScript.
+* Minimize bundle size.
+* Keep animations lightweight.
+* Optimize images.
+* Avoid unnecessary libraries.
+
+Every dependency must have a clear justification.
+
+---
+
+# Localization
+
+Never hardcode user-facing text.
+
+All text must come from translation files.
+
+Supported languages:
+
+* Arabic (default)
+* English
+
+Arabic uses RTL.
+
+English uses LTR.
+
+Switching language must never reset:
+
+* Progress
+* Scroll position
+* Accordion state
+
+---
+
+# Coding Standards
+
+Write readable code.
+
+Avoid clever code.
+
+Prefer simple solutions.
+
+Keep functions small.
+
+Separate concerns.
+
+Do not duplicate logic.
+
+Comment only when comments improve understanding.
+
+---
+
+# Configuration
+
+Campaign-specific values must never be hardcoded.
+
+Use configuration files for:
+
+* Branding
+* Forms
+* Videos
+* URLs
+* Analytics
+* Payment
+* Metadata
+* Social links
+
+Changing campaigns should require configuration changes only.
+
+---
+
+# Analytics
+
+Every meaningful interaction should be measurable.
+
+Track:
+
+* Step started
+* Step completed
+* Language changed
+* Video started
+* Video completed
+* Registration clicked
+* Registration submitted
+
+Never collect unnecessary personal data.
+
+---
+
+# Git Workflow
+
+Recommended branch structure:
+
+main
+
+Production-ready code.
+
+develop
+
+Next release.
+
+feature/<feature-name>
+
+New functionality.
+
+bugfix/<issue>
+
+Bug fixes.
+
+hotfix/<issue>
+
+Production fixes.
+
+---
+
+# Commit Messages
+
+Use clear commit messages.
+
+Examples:
+
+feat: add bilingual language switcher
+
+feat: implement workshop accordion
+
+fix: preserve progress after language change
+
+fix: improve mobile spacing
+
+refactor: simplify analytics service
+
+docs: update project decisions
+
+Avoid:
+
+"update"
+
+"changes"
+
+"fix"
+
+"test"
+
+---
+
+# Pull Request Checklist
+
+Before merging:
+
+* Project builds successfully.
+* No console errors.
+* Mobile tested.
+* Desktop tested.
+* Arabic tested.
+* English tested.
+* Accessibility verified.
+* Performance reviewed.
+* Documentation updated.
+* Decision recorded if architecture changed.
+
+---
+
+# AI Contributor Rules
+
+If you are an AI assistant:
+
+Do NOT redesign the project.
+
+Respect existing architecture.
+
+Read PROJECT.md before making changes.
+
+Read DECISIONS.md before proposing alternatives.
+
+Never replace a deliberate design decision without explaining why.
+
+Do not introduce frameworks unless explicitly requested.
+
+Prefer improving existing code over rewriting it.
+
+Preserve modularity.
+
+Preserve simplicity.
+
+Preserve accessibility.
+
+Preserve localization.
+
+When uncertain, ask instead of assuming.
+
+---
+
+# Definition of Done
+
+A task is complete only when it is:
+
+* Functional
+* Tested
+* Accessible
+* Responsive
+* Localized
+* Documented
+* Consistent with PROJECT.md
+* Consistent with DECISIONS.md
+* Ready for deployment
+
+---
+
+# Review Philosophy
+
+Every feature should be reviewed from five perspectives:
+
+1. Learner
+2. Teacher
+3. Product Manager
+4. UX Designer
+5. Software Engineer
+
+If a feature satisfies only engineering goals but harms the learner experience, redesign it.
+
+---
+
+# Non-Negotiable Rules
+
+1. Simplicity over cleverness.
+2. Education before selling.
+3. Trust before conversion.
+4. Mobile before desktop.
+5. Arabic before English.
+6. Performance before visual effects.
+7. Accessibility is mandatory.
+8. Every feature must have a measurable purpose.
+9. Reduce thinking, not functionality.
+10. Leave the codebase cleaner than you found it.
+
+---
+
+# Final Principle
+
+Every commit should make the website easier for a first-time Algerian learner to understand, trust, and complete.
+
+When faced with multiple solutions, choose the one that requires the least mental effort from the learner while remaining maintainable for future developers.

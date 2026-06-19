@@ -1,0 +1,439 @@
+# PROJECT.md
+
+# Engleasy Guided Learning
+
+Version: 1.0
+
+---
+
+# Vision
+
+Engleasy Guided Learning is not a landing page.
+
+It is a guided learning experience.
+
+Its purpose is to transform a curious visitor into a confident student through education rather than aggressive selling.
+
+The website should feel like a teacher guiding a learner—not a company selling a product.
+
+---
+
+# Mission
+
+Reduce confusion.
+
+Increase confidence.
+
+Build trust.
+
+Help the learner make one simple decision at a time.
+
+---
+
+# Business Goal
+
+Primary Goal
+
+Increase registrations for the Engleasy Intensive Course.
+
+Secondary Goals
+
+* Collect qualified leads.
+* Build trust.
+* Demonstrate expertise.
+* Deliver genuine value.
+* Introduce the Engleasy teaching philosophy.
+* Create long-term students.
+
+Every design decision must support these goals.
+
+---
+
+# Target Audience
+
+Primary audience:
+
+Algerian learners.
+
+Age:
+
+17–35.
+
+Characteristics:
+
+* Low digital literacy.
+* Mobile-first users.
+* Curious but inconsistent.
+* Want free resources.
+* Distrust exaggerated marketing.
+* Want practical English.
+* Need guidance more than motivation.
+
+Assume every visitor is using a smartphone.
+
+Assume every visitor is busy.
+
+Assume every visitor has little patience.
+
+---
+
+# Product Philosophy
+
+This is NOT
+
+❌ a brochure
+
+❌ a landing page
+
+❌ a sales page
+
+❌ a portfolio
+
+This IS
+
+✅ a guided experience
+
+✅ an onboarding journey
+
+✅ an educational product
+
+---
+
+# StoryBrand Principles
+
+The student is always the hero.
+
+Engleasy is always the guide.
+
+Never position Engleasy as the hero.
+
+Never sell before educating.
+
+Teach first.
+
+Sell second.
+
+The workshop is the bridge.
+
+The course is the logical next step.
+
+---
+
+# UX Principles
+
+The visitor should never ask:
+
+"What should I do now?"
+
+There must always be one obvious next action.
+
+One page.
+
+One journey.
+
+One CTA.
+
+One decision at a time.
+
+Never overwhelm the visitor.
+
+---
+
+# Design Philosophy
+
+The interface should feel like:
+
+Apple × Linear × Duolingo
+
+Characteristics:
+
+* Premium
+* Minimal
+* Calm
+* Friendly
+* Professional
+* Modern
+* Fast
+
+Avoid visual clutter.
+
+Whitespace is a feature.
+
+---
+
+# Marketing Philosophy
+
+We do not convince people.
+
+We help them convince themselves.
+
+We do not pressure.
+
+We educate.
+
+We remove confusion.
+
+We remove uncertainty.
+
+Trust creates conversions.
+
+---
+
+# Funnel
+
+Instagram
+
+↓
+
+Landing Page
+
+↓
+
+Placement Test
+
+↓
+
+Workshop Replay
+
+↓
+
+Course
+
+↓
+
+Registration
+
+↓
+
+Payment
+
+↓
+
+Placement Interview
+
+↓
+
+Course
+
+---
+
+# Psychological Principles
+
+Every interaction should reduce anxiety.
+
+Every completed action should create momentum.
+
+Every screen should answer one question only.
+
+Use curiosity.
+
+Use progress.
+
+Use identity.
+
+Never manipulate.
+
+Never exaggerate.
+
+Never create fake urgency.
+
+---
+
+# Language
+
+Arabic is the primary experience.
+
+English is fully supported.
+
+Both languages must feel native.
+
+Arabic uses RTL.
+
+English uses LTR.
+
+Changing language must never reset progress.
+
+---
+
+# Technical Principles
+
+Vanilla HTML.
+
+Vanilla CSS.
+
+Vanilla JavaScript.
+
+Vite for bundling.
+
+Component-based architecture.
+
+Configuration-driven content.
+
+No unnecessary dependencies.
+
+Performance before features.
+
+---
+
+# Accessibility
+
+Keyboard accessible.
+
+Screen-reader friendly.
+
+Reduced-motion support.
+
+Minimum 48px touch targets.
+
+High contrast.
+
+Semantic HTML.
+
+Accessibility is mandatory.
+
+---
+
+# Performance Goals
+
+Fast loading.
+
+Minimal JavaScript.
+
+Lazy-load embeds.
+
+Responsive images.
+
+Mobile-first.
+
+Every animation must improve understanding.
+
+---
+
+# Analytics Philosophy
+
+Measure behavior.
+
+Do not guess.
+
+Track:
+
+* Step started.
+* Step completed.
+* Workshop started.
+* Workshop completed.
+* Registration clicked.
+* Registration submitted.
+
+Use data to improve the product.
+
+---
+
+# Coding Rules
+
+Never hardcode campaign data.
+
+Everything configurable.
+
+Never duplicate logic.
+
+Prefer reusable components.
+
+Write clean, readable code.
+
+Comment only when useful.
+
+Future developers should understand the project quickly.
+
+---
+
+# Conversion Principles
+
+Every screen must answer:
+
+Why am I here?
+
+What do I get?
+
+What should I do next?
+
+Never show multiple competing CTAs.
+
+Never interrupt progress.
+
+Reduce thinking.
+
+Increase confidence.
+
+---
+
+# Definition of Done
+
+A feature is only complete if it is:
+
+✓ Useful
+
+✓ Accessible
+
+✓ Mobile-friendly
+
+✓ Fast
+
+✓ Localized
+
+✓ Consistent with StoryBrand
+
+✓ Consistent with Engleasy
+
+✓ Consistent with this document
+
+---
+
+# Non-Negotiable Rules
+
+1. The student is always the hero.
+
+2. Simplicity beats cleverness.
+
+3. Education beats persuasion.
+
+4. One decision at a time.
+
+5. Mobile-first.
+
+6. Arabic-first.
+
+7. Trust before selling.
+
+8. Performance before visual effects.
+
+9. Every feature must justify its existence.
+
+10. If a feature increases cognitive load without increasing conversions, remove it.
+
+---
+
+# Development Workflow
+
+Every development cycle follows this order:
+
+1. Understand the objective.
+2. Read PROJECT.md.
+3. Review the existing implementation.
+4. Propose improvements.
+5. Wait for approval.
+6. Implement.
+7. Test.
+8. Commit.
+9. Deploy.
+
+Never skip steps.
+
+---
+
+# Final Principle
+
+The objective is not to build the most beautiful website.
+
+The objective is to build the easiest website for an Algerian learner to become an Engleasy student.
+
+When in doubt, always choose the option that requires the least mental effort from the user.

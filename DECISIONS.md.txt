@@ -1,0 +1,515 @@
+# DECISIONS.md
+
+# Engleasy Guided Learning — Product Decisions
+
+Version: 1.0
+
+---
+
+# Purpose
+
+This document records every important product, UX, marketing and technical decision made during the development of Engleasy Guided Learning.
+
+It exists to answer one question:
+
+> "Why was this built this way?"
+
+Every major decision should be recorded here before implementation.
+
+This prevents future developers (or AI assistants) from accidentally undoing deliberate design decisions.
+
+---
+
+# Decision 001
+
+## The website is NOT a landing page.
+
+Status: ✅ Approved
+
+Date: 2026-06-19
+
+### Decision
+
+The project will be built as a guided learning experience instead of a traditional landing page.
+
+### Reason
+
+Traditional landing pages encourage browsing.
+
+Our users have low digital literacy.
+
+They become overwhelmed when presented with multiple options.
+
+Instead, the website should guide them through one decision at a time.
+
+### Result
+
+The interface behaves like an onboarding flow rather than a marketing page.
+
+---
+
+# Decision 002
+
+## The student is the hero.
+
+Status: ✅ Approved
+
+### Decision
+
+Follow StoryBrand principles.
+
+The student is always the hero.
+
+Engleasy is the guide.
+
+### Reason
+
+People buy transformation, not teachers.
+
+Every section should focus on helping the learner succeed.
+
+Never make Engleasy the center of the story.
+
+---
+
+# Decision 003
+
+## Education before selling.
+
+Status: ✅ Approved
+
+### Decision
+
+Teach first.
+
+Sell later.
+
+### Reason
+
+Trust is the primary conversion mechanism.
+
+The workshop exists to educate.
+
+The course becomes the logical continuation.
+
+Never interrupt education with aggressive selling.
+
+---
+
+# Decision 004
+
+## Three-step guided journey.
+
+Status: ✅ Approved
+
+### Flow
+
+1. Discover your English level.
+
+2. Understand why you're stuck.
+
+3. Continue improving with Engleasy.
+
+### Reason
+
+Three steps are simple enough to remember.
+
+The journey feels achievable.
+
+Progress is visible.
+
+---
+
+# Decision 005
+
+## One visible action at a time.
+
+Status: ✅ Approved
+
+### Decision
+
+Only one accordion should be active.
+
+Only one CTA should be visible.
+
+### Reason
+
+Decision fatigue reduces conversions.
+
+The visitor should never wonder what to do next.
+
+---
+
+# Decision 006
+
+## Arabic-first experience.
+
+Status: ✅ Approved
+
+### Decision
+
+Arabic is the primary experience.
+
+English is fully supported.
+
+### Reason
+
+Most visitors are Algerian Arabic speakers.
+
+The experience should feel native.
+
+English is available without becoming the default.
+
+---
+
+# Decision 007
+
+## Mobile-first design.
+
+Status: ✅ Approved
+
+### Decision
+
+Design for smartphones first.
+
+Desktop is secondary.
+
+### Reason
+
+Most visitors arrive from Instagram and TikTok using mobile devices.
+
+---
+
+# Decision 008
+
+## Google Forms instead of a custom backend.
+
+Status: ✅ Approved (Version 1)
+
+### Decision
+
+Embed Google Forms.
+
+### Reason
+
+Fast deployment.
+
+Reliable.
+
+Zero maintenance.
+
+Automatic data collection.
+
+The architecture should allow replacement with native forms later.
+
+---
+
+# Decision 009
+
+## Fathom replay remains embedded.
+
+Status: ✅ Approved
+
+### Decision
+
+Use embedded Fathom replay.
+
+### Reason
+
+The replay builds authority and trust.
+
+Visitors never leave the website.
+
+---
+
+# Decision 010
+
+## No navigation menu.
+
+Status: ✅ Approved
+
+### Decision
+
+Remove traditional navigation.
+
+### Reason
+
+Every extra navigation option increases the chance that visitors leave the funnel.
+
+The website has one purpose.
+
+Complete the guided journey.
+
+---
+
+# Decision 011
+
+## No workshop duration displayed.
+
+Status: ✅ Approved
+
+### Decision
+
+Hide the workshop duration.
+
+### Reason
+
+A two-hour duration creates unnecessary resistance before users begin watching.
+
+The value matters more than the length.
+
+---
+
+# Decision 012
+
+## Progress creates motivation.
+
+Status: ✅ Approved
+
+### Decision
+
+Display progress visually.
+
+Completed steps receive a green checkmark.
+
+### Reason
+
+Visible progress encourages completion.
+
+People naturally want to finish what they start.
+
+---
+
+# Decision 013
+
+## Emotional reinforcement.
+
+Status: ✅ Approved
+
+### Decision
+
+Celebrate small achievements.
+
+### Examples
+
+"Excellent."
+
+"Great job."
+
+"You're one step closer."
+
+### Reason
+
+Positive reinforcement maintains motivation throughout the journey.
+
+---
+
+# Decision 014
+
+## Course introduction should feel inevitable.
+
+Status: ✅ Approved
+
+### Decision
+
+Never abruptly introduce the course.
+
+Bridge naturally from:
+
+Knowledge
+
+↓
+
+Understanding
+
+↓
+
+Guided practice
+
+↓
+
+Course
+
+### Reason
+
+The paid offer should feel like the logical next step.
+
+---
+
+# Decision 015
+
+## Premium minimalist design.
+
+Status: ✅ Approved
+
+### Inspiration
+
+Apple
+
+Linear
+
+Notion
+
+Duolingo
+
+Stripe
+
+### Reason
+
+Premium simplicity communicates professionalism and trust.
+
+---
+
+# Decision 016
+
+## No fake urgency.
+
+Status: ✅ Approved
+
+### Decision
+
+Never use false scarcity.
+
+### Allowed
+
+Real enrollment deadlines.
+
+Real seat limits.
+
+Real campaign windows.
+
+### Not Allowed
+
+Fake countdown timers.
+
+Fake "only one seat left" messages.
+
+Misleading urgency.
+
+---
+
+# Decision 017
+
+## Analytics drive future improvements.
+
+Status: ✅ Approved
+
+### Decision
+
+Every important interaction should be measurable.
+
+### Reason
+
+Future decisions should be based on user behavior rather than assumptions.
+
+---
+
+# Decision 018
+
+## Modular architecture.
+
+Status: ✅ Approved
+
+### Decision
+
+Everything should be configurable.
+
+Campaign content.
+
+Branding.
+
+Forms.
+
+Videos.
+
+Analytics.
+
+### Reason
+
+Future campaigns should reuse the same application.
+
+---
+
+# Decision 019
+
+## Human support remains available.
+
+Status: ✅ Approved
+
+### Decision
+
+Include a subtle WhatsApp help option.
+
+### Reason
+
+Some visitors prefer speaking to a real person before registering.
+
+The support option should reassure rather than distract.
+
+---
+
+# Decision 020
+
+## Minimum Lovable Product before optimization.
+
+Status: ✅ Approved
+
+### Decision
+
+Launch Version 0.1 before building advanced features.
+
+### Reason
+
+Real user behavior provides better guidance than speculation.
+
+The first objective is learning, not perfection.
+
+---
+
+# Future Decision Template
+
+---
+
+# Decision XXX
+
+Status:
+
+Date:
+
+## Decision
+
+...
+
+## Reason
+
+...
+
+## Alternatives Considered
+
+...
+
+## Expected Impact
+
+...
+
+## Risks
+
+...
+
+## Approved By
+
+...
+
+---
+
+# Guiding Principle
+
+Every decision in this repository should make the website:
+
+* Easier to understand.
+* Easier to use.
+* Easier to trust.
+* More helpful.
+* More likely to convert visitors into successful Engleasy students.
+
+When two solutions are equally functional, always choose the one that reduces cognitive effort for the learner.
